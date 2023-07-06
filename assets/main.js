@@ -33,7 +33,7 @@ let valor = 10;
 if (valor % 2 === 0) {
     console.log('par');
 } else {
-    console.log('impar');
+    console.log('ímpar');
 }
 
 //5
@@ -64,7 +64,7 @@ while (divi <= 100) {
   }
   divi++;
 }
-console.log('o numero ' + divi + ' é divisivel por cinco e por sete');
+console.log('o número ' + divi + ' é divisível por cinco e por sete');
 
 //9
 let pares = 1;
@@ -78,8 +78,8 @@ do {
 
 // 10
 const pessoa = {
-    nome: 'joao',
-    idade: 25,
+    nome: 'any',
+    idade: 17,
     cidade: 'nova andradina'
 };
 for(let atributo in pessoa){
@@ -94,11 +94,11 @@ while(multi <=100) {
     } 
     multi++;
 }
-console.log('o menor numero divisivel por 2, 3 e 5 é ' + multi);
+console.log('o menor número divisível por 2, 3 e 5 é ' + multi);
 
 // 12
 for (const [index, caract] of ['a', 'b', 'c'].entries()) {
-    console.log('a letra ' + caract + ' esta na posicao ' + index)
+    console.log('a letra ' + caract + ' está na posição ' + index)
 }
 
 // 13
@@ -122,11 +122,11 @@ for(let abc in letras){
 }
 
 // 16
-let primo = parseInt(prompt('Digite um numero'));
-if (numero % 2 === 0 || numero % 3 === 0){
-    console.log('o número ' + primo + ' não é primo');
-} else {
+let primo = parseInt(prompt('Digite um número'));
+if (primo % 2 !== 0 || primo % 3 !== 0){
     console.log('o número ' + primo + ' é primo');
+} else{
+    console.log('o número ' + primo + ' não é primo');
 }
 
 // 17
@@ -137,7 +137,17 @@ while (subtrair >= 1) {
 }
 
 // 18
+let num1 = parseInt(prompt('Digite o primeiro numero'));
+let num2 = parseInt(prompt('Digite o segundo numero'));
+do {
+    num1++;
+    if(num1 % 2 !== 0){
+        continue;
+    } console.log(num1);
+} while (num1 <= num2)
+
 
 // 19
+
 
 // 20
