@@ -58,21 +58,21 @@ for(let nmr of numeros){
 
 //8
 let divi = 1;
-while (divi <= 100) {
+while (true) {
   if (divi % 5 === 0 && divi % 7 === 0) {
+    console.log('o número ' + divi + ' é divisível por cinco e por sete');
     break;
   }
   divi++;
 }
-console.log('o número ' + divi + ' é divisível por cinco e por sete');
 
 //9
 let pares = 1;
 do {
     pares++;
     if(pares % 2 !== 0){
-        continue;
-    }
+    continue;
+   }
     console.log(pares);
 } while (pares <= 10);
 
@@ -88,7 +88,7 @@ for(let atributo in pessoa){
 
 // 11
 let multi = 1;
-while(multi <=100) {
+while(multi <= 100) {
     if(multi % 2 === 0 && multi % 3 === 0 && multi % 5 === 0) {
       break;
     } 
@@ -111,9 +111,9 @@ while (contador <= 10) {
 // 14
 // let sn;
 // do{
-    // sn = prompt('Deseja sair? S/N');
-// }   while(sn !== "s");
-    // console.log("Você continua aqui");
+    // sn = prompt('Deseja sair? sim/não');
+// }   while(sn !== "sim");
+    // console.log("Você saiu!");
 
 // 15
 const letras = "any";
@@ -122,11 +122,23 @@ for(let abc in letras){
 }
 
 // 16
-let primo = parseInt(prompt('Digite um número'));
-if (primo % 2 !== 0 || primo % 3 !== 0){
-    console.log('o número ' + primo + ' é primo');
-} else{
-    console.log('o número ' + primo + ' não é primo');
+let primo = parseInt(prompt("Digite um número inteiro positivo:"));
+let ehPrimo = true;
+if (primo < 2) {
+  ehPrimo = false;
+} else {
+  for (let i = 2; i <= Math.sqrt(primo); i++) {
+    if (primo % i === 0) {
+      ehPrimo = false;
+      break;
+    }
+  }
+}
+
+if (ehPrimo) {
+  console.log(primo + " é um número primo.");
+} else {
+  console.log(primo + " não é um número primo.");
 }
 
 // 17
@@ -148,6 +160,30 @@ do {
 
 
 // 19
-
+let notas = parseInt(prompt("Digite a quantidade de notas:"));
+let soma = 0;
+for (let i = 1; i <= notas; i++) {
+  let nota = parseFloat(prompt("Digite a nota " + i + ":"));
+  soma += nota;
+}
+let media = soma / notas;
+console.log("A média das notas é:", media.toFixed(2));
 
 // 20
+const numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+let tentativas = 0;
+let acertou = false;
+console.log("Bem-vindo ao Jogo de Adivinhação!");
+while (!acertou) {
+  let palpite = parseInt(prompt("Digite seu palpite (entre 1 e 100):"));
+  tentativas++;
+
+  if (palpite === numeroAleatorio) {
+    acertou = true;
+    console.log("Parabéns! Você acertou o número em " + tentativas + " tentativas.");
+  } else if (palpite < numeroAleatorio) {
+    console.log("O número correto é maior. Tente novamente!");
+  } else {
+    console.log("O número correto é menor. Tente novamente!");
+  }
+}
